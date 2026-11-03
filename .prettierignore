@@ -6,3 +6,7 @@ pnpm-lock.yaml
 package-lock.json
 bun.lock
 routeTree.gen.ts
+
+# Hand-maintained JSONC. Prettier adds trailing commas here (trailingComma: all),
+# and this file gets handed to wrangler directly, so keep it strictly parseable.
+wrangler.jsonc

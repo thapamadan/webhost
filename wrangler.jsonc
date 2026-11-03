@@ -1,0 +1,29 @@
+{
+  // Deployment config for Cloudflare Workers.
+  //
+  // This file is NOT the whole story: `npm run build` runs nitro, which merges
+  // the values below into `.output/server/wrangler.json` and writes a pointer to
+  // it at `.wrangler/deploy/config.json`. That is why `wrangler deploy` works
+  // from the repo root with no `--config` flag.
+  //
+  // Do NOT set `main` or `assets` here — nitro always overrides them with the
+  // real build output paths and logs a warning if you declare them.
+  "name": "madanthapa-portfolio",
+
+  // Pinned on purpose. Left unset, nitro defaults this to the date of the build
+  // machine, so the Workers runtime semantics would drift each time you deploy.
+  // Keep this at or below the newest date the pinned wrangler's runtime supports, or
+  // `wrangler dev` refuses to boot.
+  "compatibility_date": "2026-10-30",
+  "compatibility_flags": ["nodejs_compat"],
+
+  // Binds the domains to the Worker on every deploy. The zone must already be
+  // in this Cloudflare account, and any pre-existing DNS record for these names
+  // (e.g. an old GitHub Pages record) has to be removed first.
+  "routes": [
+    { "pattern": "madanthapa.com.np", "custom_domain": true },
+    { "pattern": "www.madanthapa.com.np", "custom_domain": true }
+  ],
+
+  "observability": { "enabled": true }
+}
