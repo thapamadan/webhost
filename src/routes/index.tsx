@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Madan Thapa — Software Developer" },
+      { title: "Madan Thapa" },
       { name: "description", content: "Madan Thapa, software developer building card issuing, payment switching and fraud detection systems with Java, Spring Boot and Python." },
       { property: "og:title", content: "Madan Thapa — Software Developer" },
       { property: "og:description", content: "Fintech engineer working on issuer engines, ISO 8583 and AI-driven fraud rules." },
